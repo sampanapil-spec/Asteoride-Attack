@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://bci6mwijfvf7r"]
+
+[ext_resource type="Texture2D" uid="uid://bp38knj6hb3lr" path="res://assets/textures/green_ship.png" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://bohb8r5vfmof4" path="res://scripts/player.gd" id="1_g2els"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g2els"]
+bounce = 0.5
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3vyb7"]
+radius = 36.0
+height = 136.0
+
+[node name="Player" type="RigidBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_g2els")
+gravity_scale = 0.0
+lock_rotation = true
+angular_damp = 1.0
+script = ExtResource("1_g2els")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_3vyb7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_3vyb7")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.5, 0.5)
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0

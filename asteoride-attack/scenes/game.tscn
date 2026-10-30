@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://d3dfnlcxmkgsu"]
+
+[ext_resource type="Texture2D" uid="uid://dw20cr88owgpa" path="res://assets/textures/star_background.png" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://bci6mwijfvf7r" path="res://scenes/player.tscn" id="2_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://ellpp28xgk62" path="res://scenes/aseoride.tscn" id="3_lnu2h"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Stars" type="Sprite2D" parent="."]
+position = Vector2(634.5, 363.5)
+scale = Vector2(5.1054688, 2.9492188)
+texture = ExtResource("1_uwrxv")
+region_enabled = true
+region_rect = Rect2(0, 0, 500, 500)
+metadata/_edit_lock_ = true
+
+[node name="Asteorides" type="Node2D" parent="."]
+
+[node name="Aseoride" parent="Asteorides" instance=ExtResource("3_lnu2h")]
+position = Vector2(433, 157)
+
+[node name="Aseoride2" parent="Asteorides" instance=ExtResource("3_lnu2h")]
+position = Vector2(825, 414)
+
+[node name="Aseoride3" parent="Asteorides" instance=ExtResource("3_lnu2h")]
+position = Vector2(954, 254)
+
+[node name="Player" parent="." instance=ExtResource("2_yqjtg")]
+texture_filter = 1
+position = Vector2(369, 371)

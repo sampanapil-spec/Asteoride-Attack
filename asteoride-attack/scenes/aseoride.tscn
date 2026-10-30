@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://ellpp28xgk62"]
+
+[ext_resource type="Texture2D" uid="uid://d2s4k8wflnnmj" path="res://assets/textures/asteroid_grey.png" id="1_0qv78"]
+[ext_resource type="Script" uid="uid://bm05dwybaa6qe" path="res://scripts/aseoride.gd" id="1_anelh"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_anelh"]
+bounce = 10.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_anelh"]
+radius = 44.0
+
+[node name="Aseoride" type="RigidBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_anelh")
+gravity_scale = 0.0
+angular_damp = 1.0
+script = ExtResource("1_anelh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_0qv78")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_anelh")
